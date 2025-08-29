@@ -1,0 +1,37 @@
+Files                   |                       Description
+------------------------|------------------------------------------------------------------------------------------------------------------------------|
+PWM.V                   |                       Verilog Code for Running PWM on the FPGA Board at 50% Duty cycle and 50kHz                             |
+                        |                       at the Pin D17 (Board Pin Number = 29)                                                                 |
+------------------------|------------------------------------------------------------------------------------------------------------------------------|
+MASTER.v                |                       Verilog Code for I2C protocol, may have the lines missing to check the ACK                             |
+                        |                       received from the slave. Worked fine till getting the ACK after sending the                            |
+                        |                       Slave Address.	                                                                                       |
+------------------------|------------------------------------------------------------------------------------------------------------------------------|
+APB_MASTER.v            |                       Verilog Code for running the I2C protocol via the Advanced Peripheral Bus (APB)                        |
+                        |                       and the Core I2C Block available in Libero SoC catalog. Clock was observed using                       |
+                        |                       this code but no activity on the data line.                                                            |
+------------------------|------------------------------------------------------------------------------------------------------------------------------|
+ADC_READ	        |                       C Code file for Reading analog values from pin A10 of MSP430FR5969 and turning on                      |
+                        |                       the on board led for voltage input more then the reference value  defined.                             |
+------------------------|------------------------------------------------------------------------------------------------------------------------------|
+ADC_UART                |                       C Code file for Reading analog values from pin A10 of MSP430FR5969 and displaying                      |
+                        |                       it on the host PC screen via COM port.                                                                 |
+------------------------|------------------------------------------------------------------------------------------------------------------------------|
+CLOSE_LOOP_BOOST_PI     |                       C code file for implementing closed loop control of boost converter using PI                           |
+                        |                       controller.                                                                                            |
+------------------------|------------------------------------------------------------------------------------------------------------------------------|
+MPPT                    |                       C code file for implementing MPPT algorithm using the P&O technique, ADC reading                       |
+                        |                       in this code is slow for real time application due to the gain issue of voltage sensor                 |
+                        |                       available in the Lab, the code needs a better and faster method to average the ADC voltage             |
+                        |                       values. Might  have some other unknown issues. This code tracked the MPP for a period of time before   |
+                        |                       the boost converter was damaged.                                                                       |
+------------------------|------------------------------------------------------------------------------------------------------------------------------|
+PWM                     |                       C code file to run PWm on the Pin 1.2 of the MSP430FR5969.                                             |
+------------------------|------------------------------------------------------------------------------------------------------------------------------|
+TWO_ADC_READ            |                       C code file for reading Analog values from two ADC pins on the MSP430FR5969, pin A10 and A7 are used.  |
+------------------------|------------------------------------------------------------------------------------------------------------------------------|
+UART                    |                       C code file for implementing UART on the host PC.                                                      |
+------------------------|------------------------------------------------------------------------------------------------------------------------------|
+UART_ADC_PWM            |                       C code file that implements ADC on 1 pin while displaying it's value on the Host PC screen and gives   |
+                        |                       a PWM pulse on the pin 1.2 of the MSP430FR5969.                                                        |
+------------------------|------------------------------------------------------------------------------------------------------------------------------|
